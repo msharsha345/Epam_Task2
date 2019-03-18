@@ -1,23 +1,38 @@
 package com.simple.calculator;
 
 public class Calculator {
-	public double add(double a,double b)
+	
+	/*
+	 * method for addition of two numbers 
+	 */
+	
+	public double add(double operand1,double operand2)
 	{
 		
-		return a+b;
+		return operand1+operand2;
 	}
-	public  double mul(double a,double b)
+	
+	/*
+	 * method for multiplication of two numbers 
+	 */
+	
+	public  double mul(double operand1,double operand2)
 	{
-		return a*b;
+		return operand1*operand2;
 	}
-	public  double div(double a,double b)
+	
+	/*
+	 * method for division of two numbers 
+	 */
+	
+	public  double div(double operand1,double operand2)
 	{
-		if(b==0)
+		if(operand2==0)
 		{
 			throw new IllegalArgumentException("Number cannot be divided by 0");
 		}
 		else
-			return a/b;
+			return operand1/operand2;
 
 }
 }

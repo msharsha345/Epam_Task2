@@ -9,36 +9,65 @@ public class CalculatorTest {
 Calculator calculator =new Calculator();
 	
 	@Test
-	public void Addition_Test() {
-		assertEquals(" Wrong answer error in add() method",8,calculator.add(5, 3),0.0);
-		assertEquals(" Wrong answer error in add() method",12.5,calculator.add(9.5, 3),0.0);
-		assertEquals(" Wrong answer error in add() method",2192986.5,calculator.add(2161343.5,31643),0.0);
-		assertEquals(" Wrong answer error in add() method",70860.9,calculator.add(5427, 65433.9),0.0);
-		assertEquals("Excuted successfully",7.75304,calculator.add(3.8765, 3.87654),0.0);
-		assertEquals("Excuted successfully",7863875.5,calculator.add(7837347.7, 26527.8),0.0);
-	}	
-	@Test
-	public void multiplication_Test() {
+	public void Addition_Test_Pass() {
+		assertEquals(" Excuted successfully ",6,calculator.add(2, 4),0.0);
+		assertEquals(" Excuted successfully ",13.0,calculator.add(9.5, 3.5),0.0);
+		assertEquals(" Excuted successfully ",155288.5,calculator.add(29345.5,125943),0.0);
+		assertEquals(" Excuted successfully ",1864778.2,calculator.add(1232224, 632554.2),0.0);
+		assertEquals(" Excuted successfully ",7.7419,calculator.add(3.8765, 3.8654),0.0);
 		
-			assertEquals(" Wrong answer error in mul() method",15,calculator.mul(5, 3),0.0);
-			assertEquals(" Wrong answer error in mul() method",28.5,calculator.mul(9.5, 3),0.0);
-			assertEquals(" Wrong answer error in mul() method",68391392370.5,calculator.mul(2161343.5,31643),0.0);
-			assertEquals(" Wrong answer error in mul() method",355109775.3,calculator.mul(5427, 65433.9),0.0);
-			assertEquals("Wrong answer error in mul() method",15.02740731,calculator.mul(3.8765, 3.87654),0.0);
-			assertEquals("Wrong answer error in mul() method",207919651.734705,calculator.mul(7837.789, 26527.845),0.0);
+	}	
+	
+	@Test
+	public void Addition_Test_Fail() {
+		assertFalse(" Excuted successfully ",6!=calculator.add(2, 4));
+		assertFalse(" Excuted successfully ",13.0!=calculator.add(9.5, 3.5));
+		assertFalse(" Excuted successfully ",155288.5!=calculator.add(29345.5,125943));
+		assertFalse(" Excuted successfully ",1864778.2!=calculator.add(1232224, 632554.2));
+		assertFalse(" Excuted successfully ",7.7419!=calculator.add(3.8765, 3.8654));
+		
+	}
+	
+	@Test
+	public void Multiplication_Test_Pass() {
+		
+			assertEquals(" Excuted successfully ",35,calculator.mul(5, 7),0.0);
+			assertEquals(" Excuted successfully ",90.25,calculator.mul(9.5, 9.5),0.0);
+			assertEquals(" Excuted successfully ",3938055.0,calculator.mul(1234.5,3190),0.0);
+			assertEquals(" Excuted successfully ",48257978.4,calculator.mul(5490, 8790.16),0.0);
 
 		
 	}
+	
 	@Test
-	public void division_testing()
+	public void Mltiplication_Test_Fail() {
+		
+			assertFalse(" Excuted successfully ",35!=calculator.mul(5, 7));
+			assertFalse(" Excuted successfully ",90.25!=calculator.mul(9.5, 9.5));
+			assertFalse(" Excuted successfully ",3938055.0!=calculator.mul(1234.5,3190));
+			assertFalse(" Excuted successfully ",48257978.4!=calculator.mul(5490, 8790.16));
+
+		
+	}
+	
+	@Test
+	public void Division_Test_Pass()
 	{
-		assertEquals("error in sub()",0.5,calculator.div(4, 8),0.001);
-		assertEquals(" Wrong answer error in div() method",1.6666666666666667,calculator.div(5, 3),0.0);
-		assertEquals(" Wrong answer error in div() method",3.1666666666666665,calculator.div(9.5, 3),0.0);
-		assertEquals(" Wrong answer error in div() method",68.30400088487185,calculator.div(2161343.5,31643),0.0);
-		assertEquals(" Wrong answer error in div() method",0.08293866023574936,calculator.div(5427, 65433.9),0.0);
-		assertEquals("Wrong answer error in div() method",0.9999896815201185,calculator.div(3.8765, 3.87654),0.0);
-		assertEquals("Wrong answer error in div() method",0.2954551717261617,calculator.div(7837.789, 26527.845),0.0);	
+		assertEquals(" Excuted successfully ",0.65,calculator.div(13, 20),0.0);
+		assertEquals(" Excuted successfully ",0.2727272727272727,calculator.div(3, 11),0.0);
+		assertEquals(" Excuted successfully ",3,calculator.div(10.5, 3.5),0.0);
+		assertEquals(" Excuted successfully ",1.8379468325791855,calculator.div(6498.98,3536),0.0);
+		assertEquals(" Excuted successfully ",0.9845205000835499,calculator.div(6481, 6582.90),0.0);	
+	}	
+	
+	@Test
+	public void Division_Test_Fail()
+	{
+		assertFalse(" Excuted successfully ",0.65!=calculator.div(13, 20));
+		assertFalse(" Excuted successfully ",0.2727272727272727!=calculator.div(3, 11));
+		assertFalse(" Excuted successfully ",3!=calculator.div(10.5, 3.5));
+		assertFalse(" Excuted successfully ",1.8379468325791855!=calculator.div(6498.98,3536));
+		assertFalse(" Excuted successfully ",0.9845205000835499!=calculator.div(6481, 6582.90));	
 	}	
 
 }
